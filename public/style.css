@@ -131,9 +131,13 @@ h2 {
     padding: 20px 0;
 }
 
+@media (min-width: 601px) {
+    .filterSection  .filter-wrapper{
+        display: flex;
+    }
+}
+
 .filterSection {
-    display: flex;
-    /* justify-content: space-around; */
     padding: 20px;
     font-family: 'Oxygen', sans-serif;
 }
@@ -230,8 +234,9 @@ p.shoeStock {
     }
 
     .filterSection {
-        display: block;
-        padding: 0;
+        padding: 20px;
+        display: flex;
+  justify-content: center;
     }
 
     .filterSection div {
@@ -239,8 +244,11 @@ p.shoeStock {
     }
 
     #showAllBtn {
-        width: 76px;
-        margin-bottom: 20px;
+        margin-bottom: 24px;
+        margin-top: 24px;
+        padding: 6px 18px;
+        width: fit-content;
+        text-align: center;
     }
 
     .slide {
@@ -250,7 +258,43 @@ p.shoeStock {
     .slide img {
         height: 100%;
     }
+
+    .filter-option {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .filter-option label {
+        margin-right: 32px;
+    }
+
+    .filter-wrapper div:first-child {
+        margin-bottom: 16px;
+        padding-bottom: 8px;
+        text-align: center;
+    }
+
+    .show-all-btn-wrapper {
+        display: flex;
+        justify-content: center;
+        margin: 0 !important;
+    }
+
+    #available-shoes-section h2 {
+        text-align: center;
+    }
+
+    .filter-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .filter-option {
+        margin-right: 0 !important;
+    }
 }
+
+
 
 .filterSection {
     background-color: #2C3539;
@@ -262,7 +306,7 @@ p.shoeStock {
     margin-right: 1em;
 }
 
-.filterSection div:first-child {
+.filter-wrapper > div:first-child {
     border-bottom: 3px solid white;
     margin-right: 1.8em;
 }
