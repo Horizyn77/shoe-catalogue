@@ -61,6 +61,7 @@ section::after {
 .full-bleed {
     box-shadow: 0 0 0 100vmax #F5F5F5;
     clip-path: inset(0 -100vmax);
+    position: relative;
 }
 
 button.addToCartBtn {
@@ -74,7 +75,8 @@ button.addToCartBtn {
     margin-bottom: 6px;
 }
 
-button.addToWishlistBtn, button.removeFromWishlistBtn {
+button.addToWishlistBtn,
+button.removeFromWishlistBtn {
     padding: 8px 81px 8px;
     background-color: #e0e4ec;
     color: #2C3539;
@@ -89,13 +91,15 @@ button.removeFromWishlistBtn {
 }
 
 .addToCartBtn:hover,
-.addToWishlistBtn:hover, .removeFromWishlistBtn:hover {
+.addToWishlistBtn:hover,
+.removeFromWishlistBtn:hover {
     background-color: #2C3539;
     color: white;
 }
 
 .addToCartBtn:active,
-.addToWishlistBtn:active, .removeFromWishlistBtn:active {
+.addToWishlistBtn:active,
+.removeFromWishlistBtn:active {
     transform: translateY(2px);
 }
 
@@ -132,7 +136,7 @@ h2 {
 }
 
 @media (min-width: 601px) {
-    .filterSection  .filter-wrapper{
+    .filterSection .filter-wrapper {
         display: flex;
     }
 }
@@ -194,7 +198,9 @@ select {
 
 .shoeBrand,
 #sizeWishlist,
-#colourWishlist, #sizeOrders, #colourOrders {
+#colourWishlist,
+#sizeOrders,
+#colourOrders {
     color: #8d8989;
 }
 
@@ -216,10 +222,6 @@ p.shoeStock {
 }
 
 @media (max-width: 600px) {
-    .shoeContainer {
-        width: 37%;
-    }
-
     .shoeContainer img {
         width: 100%;
     }
@@ -236,7 +238,7 @@ p.shoeStock {
     .filterSection {
         padding: 20px;
         display: flex;
-  justify-content: center;
+        justify-content: center;
     }
 
     .filterSection div {
@@ -289,8 +291,49 @@ p.shoeStock {
         padding: 0 !important;
     }
 
+    .filter-wrapper>div:first-child {
+        margin-right: 0 !important;
+    }
+
     .filter-option {
         margin-right: 0 !important;
+    }
+
+    .filter-option select {
+        padding: 4px;
+    }
+
+    .filter-option label {
+        font-size: 22px;
+    }
+
+    .overlay-text h1 {
+        font-size: 26px !important;
+    }
+
+    .overlay-text p {
+        font-size: 16px !important;
+    }
+
+    .overlay-text button {
+        font-size: 12px !important;
+    }
+
+    .shoeContainer, .shoeLoaderContainer {
+        width: 43% !important;
+    }
+
+    .addToWishlistBtn {
+        padding: 8px 12px !important;
+        width: 100%;
+    }
+
+    .addToCartBtn {
+        width: 100%;
+    }
+
+    section.full-bleed {
+        justify-content: space-between !important;
     }
 }
 
@@ -306,7 +349,7 @@ p.shoeStock {
     margin-right: 1em;
 }
 
-.filter-wrapper > div:first-child {
+.filter-wrapper>div:first-child {
     border-bottom: 3px solid white;
     margin-right: 1.8em;
 }
@@ -329,11 +372,11 @@ body {
 }
 
 .overlay {
-    position: fixed;
+    position: absolute;
     background-color: rgba(0, 0, 0, 0.6);
     top: 0;
-    left: 5%;
-    right: 5%;
+    left: 0;
+    right: 0;
     bottom: 0;
 }
 
@@ -889,7 +932,8 @@ nav h1 a {
     display: block;
 }
 
-#login-error-msg, #signup-error-msg {
+#login-error-msg,
+#signup-error-msg {
     padding-top: 10px;
     text-align: center;
     color: #EE5253;
@@ -1030,7 +1074,7 @@ main {
     margin-bottom: 20px;
 }
 
-.checkout-success-container div:nth-of-type(3) a{
+.checkout-success-container div:nth-of-type(3) a {
     color: #418dff;
     text-decoration: none;
 }
@@ -1115,7 +1159,8 @@ main {
     justify-content: space-between;
 }
 
-#order-heading, #date-heading {
+#order-heading,
+#date-heading {
     font-size: 22px;
     font-weight: bold;
     margin-left: 20px;
@@ -1127,7 +1172,8 @@ main {
     justify-content: space-between;
 }
 
-#order-total-heading, #order-total-amount {
+#order-total-heading,
+#order-total-amount {
     font-size: 22px;
     font-weight: bold;
     margin-left: 20px;
@@ -1149,17 +1195,19 @@ main {
 .wishlist-section {
     padding-top: 0;
 }
-.wishlist-message-centered div{
+
+.wishlist-message-centered div {
     display: flex;
     justify-content: center;
 }
 
-.orders-message-centered div{
+.orders-message-centered div {
     display: flex;
     justify-content: center;
 }
 
-#empty-wishlist-message, #no-orders-message {
+#empty-wishlist-message,
+#no-orders-message {
     font-size: 28px;
     font-family: 'Oxygen', sans-serif;
 }
@@ -1197,7 +1245,7 @@ main {
     font-family: 'Oxygen', sans-serif;
 }
 
-.signup-success-container div{
+.signup-success-container div {
     display: flex;
     justify-content: center;
     font-size: 24px;
@@ -1211,10 +1259,11 @@ main {
     margin-bottom: 30px;
 }
 
-.signup-success-container img{
+.signup-success-container img {
     width: 600px;
     height: 600px;
 }
+
 .signup-success-container {
     margin-top: 100px;
 }
@@ -1232,7 +1281,7 @@ main {
     margin: 7px 0;
 }
 
-.order-item .cart-item-price  {
+.order-item .cart-item-price {
     font-size: 22px;
 }
 
@@ -1262,7 +1311,8 @@ main {
     animation: fadeOut ease 1s;
 }
 
-.order-item .cart-item-info > p:first-of-type, .order-item .cart-item-quantity p:first-of-type {
+.order-item .cart-item-info>p:first-of-type,
+.order-item .cart-item-quantity p:first-of-type {
     font-weight: bold;
 }
 
