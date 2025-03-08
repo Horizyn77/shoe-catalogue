@@ -6,6 +6,10 @@ const showAllBtn = document.querySelector("#showAllBtn");
 const cartIconBadge = document.querySelector(".cart-icon-badge");
 const shopNowBtn = document.querySelector("#shop-now-btn");
 const availableShoesSection = document.querySelector("#available-shoes-section");
+const hamburgerIcon = document.querySelector(".hamburger-icon");
+const hamburgerMenu = document.querySelector(".hamburger-menu");
+const menuCloseBtn = document.querySelector(".menu-close-btn");
+
 let cartTotal = 0;
 
 var slideshows = document.querySelectorAll('[data-component="slideshow"]')
@@ -132,14 +136,14 @@ function displayShoes(arr) {
             if (localStorage.getItem("jwtToken")) {
 
                 const shoeId = item.closest(".shoeContainer").dataset.shoeId;
-                
+
                 try {
-                   const response = await createCart(shoeId);
+                    const response = await createCart(shoeId);
 
-                   cartTotal = response.data.cartTotal;
-                   cartIconBadge.innerText = cartTotal;
+                    cartTotal = response.data.cartTotal;
+                    cartIconBadge.innerText = cartTotal;
 
-                } catch(error) {
+                } catch (error) {
                     console.log(error)
                 }
 
@@ -240,7 +244,19 @@ shopNowBtn.addEventListener("click", () => {
 })
 
 window.addEventListener("load", () => {
-    if(window.location.pathname === "/" && localStorage.getItem("jwtToken")) {
+    if (window.location.pathname === "/" && localStorage.getItem("jwtToken")) {
         window.location.href = "/user";
     }
+})
+
+hamburgerIcon.addEventListener("click", () => {
+    hamburgerMenu.classList.add("open");
+    document.querySelector("header").classList.add("menuOpen");
+    document.querySelectorAll(".container").forEach(el => el.classList.add("menuOpen"));
+})
+
+menuCloseBtn.addEventListener("click", () => {
+    hamburgerMenu.classList.remove("open");
+    document.querySelector("header").classList.remove("menuOpen");
+        document.querySelectorAll(".container").forEach(el => el.classList.remove("menuOpen"));
 })

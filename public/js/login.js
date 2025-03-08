@@ -1,5 +1,5 @@
-const loginBtn = document.querySelector("#login-btn");
-const signupBtn = document.querySelector("#signup-btn");
+const loginBtn = document.querySelectorAll(".login-btn");
+const signupBtn = document.querySelectorAll(".signup-btn");
 const loginFormContainer = document.querySelector(".login-form-container")
 const signupFormContainer = document.querySelector(".signup-form-container");
 const closeLoginForm = document.querySelector("#close-login-form")
@@ -29,13 +29,24 @@ function showLoginForm() {
     loginPasswordInput.value = "";
 }
 
-loginBtn.addEventListener("click", showLoginForm)
+// loginBtn.addEventListener("click", showLoginForm)
 
-signupBtn.addEventListener("click", () => {
+loginBtn.forEach(el => el.addEventListener("click", () => {
+    // alert("HI")
+    hamburgerMenu.classList.remove("open");
+    document.querySelector("header").classList.remove("menuOpen");
+    document.querySelectorAll(".container").forEach(el => el.classList.remove("menuOpen"));
+    showLoginForm();
+}));
+
+signupBtn.forEach(el => el.addEventListener("click", () => {
+    hamburgerMenu.classList.remove("open");
+    document.querySelector("header").classList.remove("menuOpen");
+        document.querySelectorAll(".container").forEach(el => el.classList.remove("menuOpen"));
     overlay.classList.remove("hidden");
     signupFormContainer.classList.remove("hidden");
     document.body.style.overflow = "hidden";
-})
+}));
 
 closeLoginForm.addEventListener("click", () => {
     overlay.classList.add("hidden");

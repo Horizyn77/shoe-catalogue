@@ -1,11 +1,14 @@
 <header>
     <div class="container">
         <nav>
+            <div class="hamburger-icon">
+                <img src="/images/icons/menu-burger.png" alt="hamburger icon">
+            </div>
             <h1><a href="/">SHOE PARADISE</a></h1>
             <div class="menu-section">
-                <div id="login-btn">Login</div>
-                <div id="signup-btn">Sign Up</div>
-                <div class="add-shoe"><a href="/add">Add Shoe</a></div>
+                <div class="login-btn hidden-menu">Login</div>
+                <div class="signup-btn hidden-menu">Sign Up</div>
+                <div class="add-shoe hidden-menu"><a href="/add">Add Shoe</a></div>
                 <div class="cart-icon-section">
                     <div class="cart-icon">
                         <img src="/images/icons/shopping-bag-icon.png" alt="">
@@ -33,15 +36,12 @@
         </div>
         <div class="overlay">
         </div>
-
         <div class="overlay-text">
             <h1>Elevate Your Style with Elegance</h1>
             <p>Explore our collection and discover the ideal smart/formal shoes that match your ambition and
                 elevate your style.</p>
             <button id="shop-now-btn">SHOP NOW</button>
         </div>
-
-
     </main>
     <div class="full-bleed" id="available-shoes-section">
         <h2>AVAILABLE SHOES</h2>
@@ -148,6 +148,12 @@
         </form>
         <div id="signup-error-msg" class="hidden"></div>
     </div>
+</div>
+<div class="hamburger-menu">
+    <div><span class="menu-close-btn">x</span></div>
+    <div class="login-btn">Login</div>
+    <div class="signup-btn">Sign Up</div>
+    <div class="add-shoe"><a href="/add">Add Shoe</a></div>
 </div>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
